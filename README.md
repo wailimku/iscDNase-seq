@@ -5,8 +5,7 @@ A. Download files
 
 <pre>
 [wlku@matrix] git clone https://github.com/wailimku/iscDNase-seq.git
-[wlku@matrix] mv scChIC-seq CRK
-[wlku@matrix] cd CRK
-[wlku@matrix CRK] ls
-[wlku@matrix CRK] AdvancedColormap.m  <b>data</b>  <b>Figures</b>  <b>GSE105012</b>  README.md  <b>src</b> violin.m  violinplot.m
+[wlku@matrix] cd iscDNase-seq
+[wlku@matrix iscDNase-seq] sh script_download_fastq
+[wlku@matrix iscDNase-seq] sh script_rename_fastq
 </pre>
