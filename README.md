@@ -39,9 +39,11 @@ B. Demultiplexing and mapping
 [wlku@matrix barcode_B_sc] sed -e '$ d'  wc_uniq2.txt > wc_uniq.txt'
 [wlku@matrix barcode_B_sc] rm wc_uniq.txt;
 [wlku@matrix barcode_B_sc] matlab -nodesktop
->>run ./src/iscDNase_get_sc.m
->>exit
-[wlku@matrix barcode_B_sc]
+>> run ./src/iscDNase_get_sc.m
+>> exit
+[wlku@matrix barcode_B_sc] mkdir selbed
+[wlku@matrix barcode_B_sc] paste selfile_hg18.txt selfile_hg18_2.txt|awk '{print "cp "$1" ./selbed/"$2" &"}'>script_cp_files
+[wlku@matrix barcode_B_sc] sh script_cp_files
 </pre>
 
 </pre>
