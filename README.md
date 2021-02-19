@@ -8,4 +8,6 @@ A. Download files
 [wlku@matrix] cd iscDNase-seq
 [wlku@matrix iscDNase-seq] sh script_download_fastq
 [wlku@matrix iscDNase-seq] sh script_rename_fastq
+[wlku@matrix iscDNase-seq] sh script_mkdir
+[wlku@matrix iscDNase-seq] sh script_mv_fastq
 </pre>
