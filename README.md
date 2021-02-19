@@ -10,4 +10,10 @@ A. Download files
 [wlku@matrix iscDNase-seq] sh script_rename_fastq
 [wlku@matrix iscDNase-seq] sh script_mkdir
 [wlku@matrix iscDNase-seq] sh script_mv_fastq
+[wlku@matrix iscDNase-seq] sh script_cp_fastq
 </pre>
+
+A. Demultiplexing and mapping 
+--------------------------------------
+
+1. Using matlab to generate Unix script
