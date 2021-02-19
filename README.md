@@ -6,6 +6,9 @@ A. Download files
 <pre>
 [wlku@matrix] git clone https://github.com/wailimku/iscDNase-seq.git
 [wlku@matrix] cd iscDNase-seq
+[wlku@matrix iscDNase-seq] pwd
+[kuw@cn4257 scDNase-seq$
+/yourpath/iscDNase-seq
 [wlku@matrix iscDNase-seq] sh script_download_fastq
 [wlku@matrix iscDNase-seq] sh script_rename_fastq
 [wlku@matrix iscDNase-seq] sh script_mkdir
@@ -13,7 +16,17 @@ A. Download files
 [wlku@matrix iscDNase-seq] sh script_cp_fastq
 </pre>
 
-A. Demultiplexing and mapping 
+B. Demultiplexing and mapping 
 --------------------------------------
 
-1. Using matlab to generate Unix script
+1. Using matlab to generate Unix script. Note that here require the build of reference genome. Assume that it is located at yourpath/Basic_data/Bowtie2Index/hg18/.
+
+<pre>
+[wlku@matrix iscDNase-seq] cd barcode_B_sc
+[wlku@matrix barcode_B_sc] sh script_map
+[wlku@matrix barcode_B_sc] matlab -nodesktop
+>>run ./src/iscDNase_mapping_demul_96_barcodes.m
+>>exit
+[wlku@matrix barcode_B_sc] ls ./GB*/script_mapping|awk '{print "sh "$1}'>sh_script_mapping
+[wlku@matrix barcode_B_sc] sh sh_script_mapping
+</pre>
