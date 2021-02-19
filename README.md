@@ -30,3 +30,18 @@ B. Demultiplexing and mapping
 [wlku@matrix barcode_B_sc] ls ./GB*/script_mapping|awk '{print "sh "$1}'>sh_script_mapping
 [wlku@matrix barcode_B_sc] sh sh_script_mapping
 </pre>
+
+2. Remove duplicated reads and identify single cells
+<pre>
+[wlku@matrix barcode_B_sc] ls ./GB*/*.hg18 |awk '{print "sort -u -k1,1 -k2,2 -k3,3 "$1" > "$1".uniq &" }'>script_sort_uniq
+[wlku@matrix barcode_B_sc] sh script_sort_uniq
+[wlku@matrix barcode_B_sc] wc -l ./GB*/*hg18.uniq|awk ''{print $1"\t"$2}''>wc_uniq2.txt'
+[wlku@matrix barcode_B_sc] sed -e '$ d'  wc_uniq2.txt > wc_uniq.txt'
+[wlku@matrix barcode_B_sc] rm wc_uniq.txt;
+[wlku@matrix barcode_B_sc] matlab -nodesktop
+>>run ./src/iscDNase_get_sc.m
+>>exit
+[wlku@matrix barcode_B_sc]
+</pre>
+
+</pre>
