@@ -36,11 +36,11 @@ B. Demultiplexing and mapping
 [wlku@matrix iscDNase-seq] ls ./barcode_*_sc/GB*/*.hg18 |awk '{print "sort -u -k1,1 -k2,2 -k3,3 "$1" > "$1".uniq &" }'>script_sort_uniq
 [wlku@matrix iscDNase-seq] sh script_sort_uniq
 [wlku@matrix iscDNase-seq] wc -l ./barcode_B_sc/*hg18.uniq|awk ''{print $1"\t"$2}''>wc_uniq_B2.txt'
-[wlku@matrix iscDNase-seq] sed -e '$ d'  wc_uniqB2.txt > wc_uniqB.txt'
-[wlku@matrix iscDNase-seq] rm wc_uniqB2.txt;
+[wlku@matrix iscDNase-seq] sed -e '$ d'  wc_uniq_B2.txt > wc_uniq_B.txt'
+[wlku@matrix iscDNase-seq] rm wc_uniq_B2.txt;
 [wlku@matrix iscDNase-seq] wc -l ./barcode_A_sc/*hg18.uniq|awk ''{print $1"\t"$2}''>wc_uniq_A2.txt'
-[wlku@matrix iscDNase-seq] sed -e '$ d'  wc_uniqA2.txt > wc_uniqA.txt'
-[wlku@matrix iscDNase-seq] rm wc_uniqA2.txt;
+[wlku@matrix iscDNase-seq] sed -e '$ d'  wc_uniq_A2.txt > wc_uniq_A.txt'
+[wlku@matrix iscDNase-seq] rm wc_uniq_A2.txt;
 [wlku@matrix iscDNase-seq] matlab -nodesktop
 >> run ./src/iscDNase_get_sc_B.m
 >> run ./src/iscDNase_get_sc_A.m
