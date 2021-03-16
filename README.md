@@ -33,17 +33,21 @@ B. Demultiplexing and mapping
 
 2. Remove duplicated reads and identify single cells
 <pre>
-[wlku@matrix barcode_B_sc] ls ./GB*/*.hg18 |awk '{print "sort -u -k1,1 -k2,2 -k3,3 "$1" > "$1".uniq &" }'>script_sort_uniq
-[wlku@matrix barcode_B_sc] sh script_sort_uniq
-[wlku@matrix barcode_B_sc] wc -l ./GB*/*hg18.uniq|awk ''{print $1"\t"$2}''>wc_uniq2.txt'
-[wlku@matrix barcode_B_sc] sed -e '$ d'  wc_uniq2.txt > wc_uniq.txt'
-[wlku@matrix barcode_B_sc] rm wc_uniq.txt;
-[wlku@matrix barcode_B_sc] matlab -nodesktop
->> run ./src/iscDNase_get_sc.m
+[wlku@matrix iscDNase-seq] ls ./barcode_*_sc/GB*/*.hg18 |awk '{print "sort -u -k1,1 -k2,2 -k3,3 "$1" > "$1".uniq &" }'>script_sort_uniq
+[wlku@matrix iscDNase-seq] sh script_sort_uniq
+[wlku@matrix iscDNase-seq] wc -l ./barcode_B_sc/*hg18.uniq|awk ''{print $1"\t"$2}''>wc_uniq_B2.txt'
+[wlku@matrix iscDNase-seq] sed -e '$ d'  wc_uniqB2.txt > wc_uniqB.txt'
+[wlku@matrix iscDNase-seq] rm wc_uniqB2.txt;
+[wlku@matrix iscDNase-seq] wc -l ./barcode_A_sc/*hg18.uniq|awk ''{print $1"\t"$2}''>wc_uniq_A2.txt'
+[wlku@matrix iscDNase-seq] sed -e '$ d'  wc_uniqA2.txt > wc_uniqA.txt'
+[wlku@matrix iscDNase-seq] rm wc_uniqA2.txt;
+[wlku@matrix iscDNase-seq] matlab -nodesktop
+>> run ./src/iscDNase_get_sc_B.m
+>> run ./src/iscDNase_get_sc_A.m
 >> exit
 [wlku@matrix barcode_B_sc] mkdir selbed
-[wlku@matrix barcode_B_sc] paste selfile_hg18.txt selfile_hg18_2.txt|awk '{print "cp "$1" ./selbed/"$2" &"}'>script_cp_files
-[wlku@matrix barcode_B_sc] sh script_cp_files
+[wlku@matrix barcode_B_sc] sh script_cp_file_B
+[wlku@matrix barcode_B_sc] sh script_cp_file_A
 </pre>
 
 </pre>
