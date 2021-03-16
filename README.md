@@ -1,5 +1,3 @@
-Update today(March-16-2021) at 4pm EST.
-
 A. Download files
 --------------------------------------
 
@@ -49,5 +47,10 @@ B. Demultiplexing and mapping
 [wlku@matrix barcode_B_sc] sh script_cp_file_B
 [wlku@matrix barcode_B_sc] sh script_cp_file_A
 </pre>
+
+
+C. Cell clustering
+--------------------------------------
+Update on (17-March-2021) 3pm EST
 
 </pre>
