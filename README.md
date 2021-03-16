@@ -25,8 +25,9 @@ B. Demultiplexing and mapping
 [wlku@matrix iscDNase-seq] sh script_map
 [wlku@matrix iscDNase-seq] matlab -nodesktop
 >>run ./src/iscDNase_mapping_demul_96_barcodes.m
+>>run ./src/iscDNase_mapping_demul_61_barcodes.m
 >>exit
-[wlku@matrix iscDNase-seq] ls ./barcode_B_sc/GB*/script_mapping|awk '{print "sh "$1}'>sh_script_mapping
+[wlku@matrix iscDNase-seq] ls ./barcode_*_sc/GB*/script_mapping|awk '{print "sh "$1}'>sh_script_mapping
 [wlku@matrix iscDNase-seq] sh sh_script_mapping
 </pre>
 
